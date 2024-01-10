@@ -1,0 +1,21 @@
+ul {
+  list-style: none;
+  margin-left: -40px;
+}
+
+.container {
+  margin: 20px;
+  border: 1px solid;
+  height: 100vh;
+}
+
+.main-header {
+  padding: 10px;
+}
+
+.content {
+  width: 50%;
+}
+.partner {
+  font-weight: 700;
+}

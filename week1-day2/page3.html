@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Web Page</title>
+  </head>
+  <body>
+    <!-- container to wrap the content -->
+    <div class="container">
+      <!-- Name of the Website Dhairya -->
+      <header>
+        <marquee><h1>Dhairya's Website</h1></marquee>
+      </header>
+
+      <!-- Main Navigation -->
+      <nav>
+        <ul>
+          <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a href="page2.html">
+            <li>About</li>
+          </a>
+
+          <li>Gallery</li>
+          <a href="page3.html">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </nav>
+      <!-- End Navigation -->
+
+      <!-- Main Content -->
+      <main>
+        <h1>My Second Heading</h1>
+        <p>My Second Paragraph</p>
+
+        <form action="register" method="post" class="forms">
+          <fieldset>
+            <legend class="dashed">User Information</legend>
+            <label>Full Name</label><br />
+            <input class="input" type="text" placeholder="Name" /><br />
+            <label>Email</label><br />
+            <input
+              class="input"
+              type="email"
+              placeholder="dhairya@gmail.com"
+            /><br />
+            <label>Phone</label><br />
+            <input
+              class="input"
+              type="number"
+              placeholder="+1 123-4345-344"
+            /><br />
+            <label>Gender</label><br />
+            <input type="radio" name="Male" value="Male" />Male
+            <input type="radio" name="FeMale" value="FeMale" /><br />
+
+            <label>How we can contact You?</label><br />
+            <select class="input">
+              <option value="Email">Email</option>
+              <option value="Phone">Phone</option></select
+            ><br />
+            <label>Tell us about your visit Today?</label>
+            <textarea class="input" rows="5" cols="30"></textarea><br />
+            <input class="input" type="submit" value="Sign-Up" />
+          </fieldset>
+        </form>
+      </main>
+      <!-- End of Main Content -->
+
+      <!-- Footer Information -->
+      <br />
+      <footer>&copy; Copyright 2024</footer>
+      <!-- End of Footer Information Dhairya -->
+    </div>
+  </body>
+</html>
