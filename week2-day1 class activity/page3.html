@@ -6,53 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First Web Page</title>
   </head>
-  <style>
-    header {
-      background: url(images/central_park.jpg) 0 -200px no-repeat;
-      background-size: 1500px;
-      height: 400px;
-    }
-    li {
-      list-style-type: none;
-      display: inline;
-      padding: 0 20px;
-    }
-    li a {
-      text-decoration: none;
-    }
-    li a:link {
-      color: black;
-    }
-    li a:visited {
-      color: #818db3;
-    }
-    li a:hover {
-      color: #333;
-    }
-    li a:active {
-      color: #753a30;
-    }
-    nav {
-      background-color: rgb(red, green, blue);
-      height: 50px;
-      text-align: center;
-      padding: 2px;
-    }
-    main {
-      height: 480px;
-    }
-    main h1 {
-      color: rgb(129, 141, 179);
-      font-family: arial;
-    }
-    footer {
-      height: 40px;
-      background-color: rgb(129, 141, 179);
-      text-align: center;
-      padding-top: 20px;
-      color: rgb(211, 218, 240);
-    }
-  </style>
+
   <body>
     <!-- container to wrap the content -->
     <div class="container">
@@ -87,31 +41,23 @@
         <form action="register" method="post" class="forms">
           <fieldset>
             <legend class="dashed">User Information</legend>
-            <label>Full Name</label><br />
-            <input class="input" type="text" placeholder="Name" /><br />
-            <label>Email</label><br />
-            <input
-              class="input"
-              type="email"
-              placeholder="dhairya@gmail.com"
-            /><br />
-            <label>Phone</label><br />
-            <input
-              class="input"
-              type="number"
-              placeholder="+1 123-4345-344"
-            /><br />
-            <label>Gender</label><br />
+            <label>Full Name</label>
+            <input class="input" type="text" placeholder="Name" />
+            <label>Email</label>
+            <input class="input" type="email" placeholder="dhairya@gmail.com" />
+            <label>Phone</label>
+            <input class="input" type="number" placeholder="+1 123-4345-344" />
+            <label>Gender</label>
             <input type="radio" name="Male" value="Male" />Male
-            <input type="radio" name="FeMale" value="FeMale" /><br />
+            <input type="radio" name="FeMale" value="FeMale" />Female
 
-            <label>How we can contact You?</label><br />
+            <label>How we can contact You?</label>
             <select class="input">
               <option value="Email">Email</option>
-              <option value="Phone">Phone</option></select
-            ><br />
+              <option value="Phone">Phone</option>
+            </select>
             <label>Tell us about your visit Today?</label>
-            <textarea class="input" rows="5" cols="30"></textarea><br />
+            <textarea class="input" rows="5" cols="30"></textarea>
             <input class="input" type="submit" value="Sign-Up" />
           </fieldset>
         </form>
@@ -119,7 +65,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer Information -->
-      <br />
+
       <footer>&copy; Copyright 2024</footer>
       <!-- End of Footer Information Dhairya -->
     </div>
