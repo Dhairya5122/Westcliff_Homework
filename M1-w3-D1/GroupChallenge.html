@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECEIPE</title>
+    <style>
+      .btn1 {
+        text-align: center;
+        border-radius: 100px;
+        font-size: 20px;
+        background: #000;
+        color: #fff;
+        font-weight: 600;
+        border: 1px solid #e91313;
+        padding: 5px;
+      }
+      .btn2 {
+        text-align: center;
+        border-radius: 100px;
+        font-size: 20px;
+        background: #000;
+        color: #fff;
+        font-weight: 600;
+        border: 1px solid #e91313;
+        padding: 5px;
+      }
+      .main-container {
+        border: 1px dashed #000;
+        padding: 20px;
+        margin: 20px;
+        width: 30%;
+        height: 250px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <center><h1>Food Menu</h1></center>
+      <button class="btn1" onclick="displayRecipe('noon')">Noon</button>
+      <button class="btn2" onclick="displayRecipe('sunset')">Sunset</button>
+      <center>
+        <div class="main-container" id="recipeContainer"></div>
+      </center>
+    </main>
+  </body>
+  <script>
+    function displayRecipe(time) {
+      var lunchRecipe = [
+        "Lunch Recipe",
+        "Step 1: Gather ingredients for lunch.",
+        "Step 2: Preheat the oven or stovetop.",
+        "Step 3: Cook the main course.",
+        "Step 4: Prepare side dishes.",
+        "Step 5: Enjoy your delicious lunch!",
+      ];
+
+      var dinnerRecipe = [
+        "Dinner Recipe",
+        "Step 1: Gather ingredients for dinner.",
+        "Step 2: Preheat the oven or stovetop.",
+        "Step 3: Cook the main course.",
+        "Step 4: Prepare side dishes.",
+        "Step 5: Enjoy your satisfying dinner!",
+      ];
+
+      var nothing = ["Wake Up and Thing"];
+
+      var recipeContainer = document.getElementById("recipeContainer");
+
+      recipeContainer.innerHTML = "";
+
+      if (time === "noon") {
+        recipeContainer.innerHTML += "<h2>" + lunchRecipe[0] + "</h2>";
+        for (var i = 1; i <= 5; i++) {
+          recipeContainer.innerHTML += "<li>" + lunchRecipe[i] + "</li>";
+        }
+      } else if (time === "sunset") {
+        recipeContainer.innerHTML += "<h2>" + dinnerRecipe[0] + "</h2>";
+        for (var j = 1; j <= 5; j++) {
+          recipeContainer.innerHTML += "<li>" + dinnerRecipe[j] + "</li>";
+        }
+      } else {
+        recipeContainer.innerHTML += "<h2>" + nothing + "<h2>";
+      }
+    }
+  </script>
+</html>
