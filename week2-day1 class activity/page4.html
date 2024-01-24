@@ -29,6 +29,9 @@
           <a href="page3.html">
             <li>Contact</li>
           </a>
+          <a href="page4.html">
+            <li>Gallery</li>
+          </a>
         </ul>
       </nav>
       <!-- End Navigation -->
@@ -38,10 +41,14 @@
         <h1>My Second Heading</h1>
         <p>My Second Paragraph</p>
 
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page2.html">About</a></li>
-        <li><a href="page3.html">Gallery</a></li>
-        <li><a href="page4.html">Contact</a></li>
+        <ul id="album">
+          <!-- <li id="photo"><img src="Images/winterland1.jpg"></li>
+            <li id="photo"><img src="Images/winterland2.jpg"></li>
+            <li id="photo"><img src="Images/winterland3.jpg"></li>
+            <li id="photo"><img src="Images/winterland4.jpg"></li>
+            <li id="photo"><img src="Images/winterland5.jpg"></li>
+            <li id="photo"><img src="Images/winterland6.jpg"></li> -->
+        </ul>
       </main>
       <!-- End of Main Content -->
 
@@ -50,5 +57,20 @@
       <footer>&copy; Copyright 2024</footer>
       <!-- End of Footer Information Dhairya -->
     </div>
+    <script>
+      var photos = [];
+      var fileNames = [];
+      var imageList = [];
+      var image;
+      var openList = "<li id='photo'>";
+      var closeList = "</li>";
+      for (var i = 0; i < 6; i++) {
+        fileNames.push("winterland" + (i + 1));
+        photos.push("<img src='Images/" + fileNames[i] + ".jpg'>");
+        image = openList + photos[i] + closeList;
+        imageList.push(image);
+      }
+      document.getElementById("album").innerHTML = imageList;
+    </script>
   </body>
 </html>

@@ -38,8 +38,9 @@
   <body>
     <main>
       <center><h1>Food Menu</h1></center>
-      <button class="btn1" onclick="displayRecipe('noon')">Noon</button>
-      <button class="btn2" onclick="displayRecipe('sunset')">Sunset</button>
+
+      <!-- <button class="btn1" onclick="displayRecipe('noon')">Noon</button>
+      <button class="btn2" onclick="displayRecipe('sunset')">Sunset</button> -->
       <center>
         <div class="main-container" id="recipeContainer"></div>
       </center>
@@ -47,6 +48,12 @@
   </body>
   <script>
     function displayRecipe(time) {
+      var time = new Date();
+      var hours = time.getHours();
+      // var hours = 12;
+      // var hours = 18;
+      // var hours = 19;
+      console.log("time", hours);
       var lunchRecipe = [
         "Lunch Recipe",
         "Step 1: Gather ingredients for lunch.",
@@ -65,25 +72,36 @@
         "Step 5: Enjoy your satisfying dinner!",
       ];
 
-      var nothing = ["Wake Up and Thing"];
+      var BreakfastRecipe = [
+        "Breakfast Recipe",
+        "Step 1: Gather ingredients for breakfast.",
+        "Step 2: Preheat the oven or stovetop.",
+        "Step 3: Cook the main course.",
+        "Step 4: Prepare side dishes.",
+        "Step 5: Enjoy your satisfying breakfast!",
+      ];
 
       var recipeContainer = document.getElementById("recipeContainer");
 
       recipeContainer.innerHTML = "";
 
-      if (time === "noon") {
+      if (hours <= 18 && hours > 12) {
         recipeContainer.innerHTML += "<h2>" + lunchRecipe[0] + "</h2>";
         for (var i = 1; i <= 5; i++) {
           recipeContainer.innerHTML += "<li>" + lunchRecipe[i] + "</li>";
         }
-      } else if (time === "sunset") {
+      } else if (hours > 18) {
         recipeContainer.innerHTML += "<h2>" + dinnerRecipe[0] + "</h2>";
         for (var j = 1; j <= 5; j++) {
           recipeContainer.innerHTML += "<li>" + dinnerRecipe[j] + "</li>";
         }
       } else {
-        recipeContainer.innerHTML += "<h2>" + nothing + "<h2>";
+        recipeContainer.innerHTML += "<h2>" + BreakfastRecipe[0] + "<h2>";
+        for (var k = 1; k <= 5; k++) {
+          recipeContainer.innerHTML += "<li>" + BreakfastRecipe[k] + "</h2>";
+        }
       }
     }
+    displayRecipe();
   </script>
 </html>
