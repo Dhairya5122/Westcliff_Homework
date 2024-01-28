@@ -95,6 +95,7 @@
           num1 +
           " is " +
           fractionNum +
+          "%" +
           " of " +
           num2;
       }
@@ -105,6 +106,36 @@
         var num2 = document.getElementById("percent2-input").value;
         fractionsNum(num1, num2);
       });
+
+      // INteger Number
+
+      function intNumber(numInt) {
+        var intNumber = Math.round(numInt);
+        document.getElementById("solution").innerHTML =
+          "The  " + numInt + " is " + intNumber;
+      }
+
+      var IntButton = document.getElementById("int-button");
+      IntButton.addEventListener("click", function () {
+        var numInt = document.getElementById("int-input").value;
+        intNumber(numInt);
+      });
+
+      // Area of circle
+
+      function RadNUmber(roundNum) {
+        var RadNUmber = Math.PI * Math.pow(roundNum, 2);
+        console.log(RadNUmber);
+        document.getElementById("solution").innerHTML =
+          "The  " + roundNum + " is " + RadNUmber;
+      }
+
+      var IntButton = document.getElementById("area-button");
+      IntButton.addEventListener("click", function () {
+        var roundNum = document.getElementById("area-input").value;
+        RadNUmber(roundNum);
+      });
+
       /* Preview this page on the browser and test the first calculation */
 
       /* Now it's your turn to do the rest as seen on the preview */
