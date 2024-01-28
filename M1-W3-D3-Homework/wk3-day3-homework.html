@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style>
+      div {
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label
+        >Square this number:
+        <input type="number" id="square-input" size="2" />
+      </label>
+      <button id="square-button">Calculate</button>
+    </div>
+
+    <div>
+      <label
+        >Half this number:
+        <input type="number" id="half-input" size="2" />
+      </label>
+      <button id="half-button">Calculate</button>
+    </div>
+
+    <div>
+      <label>
+        Fraction:
+        <input type="number" id="percent1-input" size="2" />
+      </label>
+      <label>
+        Whole:
+        <input type="number" id="percent2-input" size="2" />
+      </label>
+      <button id="percent-button">Calculate</button>
+    </div>
+
+    <div>
+      <label>
+        Integer:
+        <input type="number" id="int-input" size="2" />
+      </label>
+      <button id="int-button">Calculate</button>
+    </div>
+
+    <div>
+      <label
+        >Calculate area of circle with radius:
+        <input type="number" id="area-input" size="2" />
+      </label>
+      <button id="area-button">Calculate</button>
+    </div>
+
+    <div id="solution"></div>
+
+    <script>
+      function squareNumber(num) {
+        var squaredNumber = num * num;
+        console.log("square", squaredNumber);
+        document.getElementById("solution").innerHTML =
+          "The result of squaring the number " + num + " is " + squaredNumber;
+      }
+
+      var squareButton = document.getElementById("square-button");
+      squareButton.addEventListener("click", function () {
+        var num = document.getElementById("square-input").value;
+        squareNumber(num);
+      });
+
+      // Half the Number
+
+      function halfNumber(numHalf) {
+        var halfNumber = numHalf * 0.5;
+        console.log("first", numHalf);
+        document.getElementById("solution").innerHTML =
+          "The result of Half the number " + numHalf + " is " + halfNumber;
+      }
+
+      var halfButton = document.getElementById("half-button");
+      halfButton.addEventListener("click", function () {
+        var numHalf = document.getElementById("half-input").value;
+        halfNumber(numHalf);
+      });
+
+      //Fraction this Number
+
+      function fractionsNum(num1, num2) {
+        var fractionNum = (num1 / num2) * 100;
+        console.log("firstdef", num1, num2, fractionNum);
+        document.getElementById("solution").innerHTML =
+          "The Fraction the number " +
+          num1 +
+          " is " +
+          fractionNum +
+          " of " +
+          num2;
+      }
+
+      var percentButton = document.getElementById("percent-button");
+      percentButton.addEventListener("click", function () {
+        var num1 = document.getElementById("percent1-input").value;
+        var num2 = document.getElementById("percent2-input").value;
+        fractionsNum(num1, num2);
+      });
+      /* Preview this page on the browser and test the first calculation */
+
+      /* Now it's your turn to do the rest as seen on the preview */
+
+      /* WRITE YOUR HOMEWORK SCRIPTS BELOW HERE */
+    </script>
+  </body>
+</html>

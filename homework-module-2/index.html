@@ -200,16 +200,18 @@
       <center>
 
         <section>
-          <ul id="partners">
-            <li class="partner"><img src="images/partner-bustour.png" alt="partner-bustour"></li>
+          <li id="partners">
+            <!-- <li class="partner"><img src="images/partner-bustour.png" alt="partner-bustour"></li>
             <li class="partner"><img src="images/partner-cabinrental.png" alt="partner-bustour"></li>
             <li class="partner"><img src="images/partner-campingadv.png" alt="partner-bustour"></li>
             <li class="partner"><img src="images/partner-collegetours.png" alt="partner-bustour"></li>
             <li class="partner"><img src="images/partner-rentalbike.png" alt="partner-bustour"></li>
             <li class="partner"><img src="images/partner-tourgroup.png" alt="partner-bustour"></li>
+             -->
+
             
             
-          </ul>
+            </li>
           
         </section>
       
@@ -236,7 +238,28 @@
                
       <!-- End of Footer Information Dhairya -->
     </div>
+
+
+
     <script>
+
+       
+      var photos = [];
+      var fileNames = [];
+      var imageList = [];
+      var image;
+      var openList = "<li class='partner' id='photos'>";
+      var closeList = "</li>";
+      var imageNames = ["partner-bustour","partner-cabinrental", "partner-campingadv",
+       "partner-collegetours","partner-rentalbike","partner-tourgroup"];
+      for (var i = 0; i < 6; i++) {
+    fileNames.push(imageNames[i]);
+    photos.push("<img src='images/" + fileNames[i] + ".png'>");
+    image = openList + photos[i] + closeList;
+    imageList.push(image);
+  }
+      document.getElementById("partners").innerHTML = imageList;
+   
     function currentTime(){
         // Declare variables
         var d = new Date();
