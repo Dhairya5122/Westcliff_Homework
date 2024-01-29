@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Second Web Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- container to wrap the content -->
+    <div class="container">
+      <!-- Name of the Website Dhaairya -->
+      <header>
+        <h1>Dhairya Website</h1>
+      </header>
+
+      <!-- Main Navigation -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="page2.html">About Us</a></li>
+          <li><a href="page4.html">Gallery</a></li>
+          <li><a href="page3.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- End Navigation -->
+
+      <!-- Main Content -->
+      <main>
+        <h1>My Fourth Heading</h1>
+        <p>My Fourth Paragraph</p>
+
+        <ul id="album">
+          <!-- <li id="photo"><img src="Images/winterland1.jpg"></li>
+            <li id="photo"><img src="Images/winterland2.jpg"></li>
+            <li id="photo"><img src="Images/winterland3.jpg"></li>
+            <li id="photo"><img src="Images/winterland4.jpg"></li>
+            <li id="photo"><img src="Images/winterland5.jpg"></li>
+            <li id="photo"><img src="Images/winterland6.jpg"></li> -->
+        </ul>
+
+        <!-- <li class="captionTexts"> -->
+        <!-- <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li>
+          <li id="desc">beautiful winterland</li> -->
+        <!-- <li id="desc">beautiful winterland</li> -->
+        <!-- </li>  -->
+      </main>
+      <!-- End of Main Content -->
+
+      <!-- Footer Information -->
+      <footer>&copy; Copyright 2024</footer>
+      <!-- End of Footer Information Dhruvkumar -->
+    </div>
+
+    <script>
+      var photos = [];
+      var fileNames = [];
+      var imageList = [];
+      var cap = [];
+      var captionTexts = [
+        "winterland 1",
+        "Snowland",
+        "winterland 2",
+        "Snowland 2",
+        "WInterland 3",
+        "Snowlnad 3",
+        "Winterland 4",
+        "Snowland 4",
+        "winterlnd 5",
+        "Snowland 6",
+      ];
+      var descTexts = [];
+      for (var i = 0; i < 10; i++) {
+        fileNames.push("winterland" + (i + 1));
+        photos.push("<img src='Images/" + fileNames[i] + ".jpg'>");
+        descTexts.push("<p class='captionTexts'>" + captionTexts[i] + "</p>");
+        imageList.push(photos[i] + descTexts[i]);
+      }
+      document.getElementById("album").innerHTML =
+        "<ul>" + imageList.join("") + "</ul>";
+
+      var images = document.querySelectorAll("album");
+      for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener("mouseover", function () {
+          var desc = this.nextElementSibling;
+          desc.style.display = "block";
+          desc.style.top = this.offsetTop + this.offsetHeight + "px";
+          desc.style.left = this.offsetLeft + "px";
+        });
+
+        images[i].addEventListener("mouseout", function () {
+          var desc = this.nextElementSibling;
+          desc.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <script>
+  var photos = [];
+  var fileNames = [];
+  var imageList = [];
+  var captionTexts = ["winterland 1", "Snowland", "winterland 2", "Snowland 2", "WInterland 3", "Snowlnad 3", "Winterland 4", "Snowland 4", "winterlnd 5", "Snowland 6"];
+  var descTexts = [];
+  for (var i = 0; i < 10; i++) {
+    fileNames.push("winterland" + (i + 1));
+    photos.push("<img src='Images/" + fileNames[i] + ".jpg'>");
+    descTexts.push("<p class='captionTexts'>" + captionTexts[i] + "</p>");
+    imageList.push(photos[i] + descTexts[i]);
+  }
+  document.getElementById("album").innerHTML = "<ul>" + imageList.join("") + "</ul>";
+</script> -->
