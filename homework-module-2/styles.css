@@ -246,3 +246,12 @@ input {
 #clock {
   color: #125688;
 }
+
+form .button input {
+  width: 8em;
+  height: 2.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+}
