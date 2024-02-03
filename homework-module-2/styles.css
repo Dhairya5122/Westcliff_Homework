@@ -247,7 +247,7 @@ input {
   color: #125688;
 }
 
-form .button input {
+.button {
   width: 8em;
   height: 2.5em;
   font-size: 1.2em;
