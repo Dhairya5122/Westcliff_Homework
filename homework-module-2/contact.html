@@ -54,7 +54,7 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
     </div>
 </div>
 
-<form action="/contact" method="post">  
+<form action="#" method="post">  
 <fieldset>  
     <legend>Contact Form</legend>
     <div class="textbox">
@@ -66,20 +66,23 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
         <input type="text" name="phone" placeholder="xxx-xxx-xxxx"> 
     </div>
     
-    <div class="radios">
-        <label>How should we contact you?</label>  
-        <input type="radio" class="radio" name="contact" value="email" checked>Email 
-        <input type="radio" class="radio" name="contact" value="phone">Phone
-    </div>
+   
 
     <div class="selectmenu">
-        <label>Which Cliff are you inquiring?</label>  
-        <select>
-            <option>West Cliff</option>
-            <option>North Cliff</option>
-            <option>East Cliff</option>
-            <option>South Cliff</option>
-        </select>
+        <label>How Should We contact You?</label>  
+        <select id="dropdown">
+            <option>Email</option>
+            <option>Phone</option>
+           
+        </select><br />
+
+      
+    
+
+    
+
+        <p id="selectedOption">Enter Your <span id="label">Email</span></p>
+        <input />
     </div>
     
     <div class="commentbox">
@@ -146,4 +149,15 @@ the Cliffs, Hours of Operations, Facilities or questions about this site using o
       <!-- End of Footer Information Dhairya -->
     </div>
   </body>
+  <script>
+        // Get references to the dropdown and label elements
+        var dropdown = document.getElementById('dropdown');
+        var labelElement = document.getElementById('label');
+
+        // Add an event listener to the dropdown
+        dropdown.addEventListener('change', function() {
+            // Update the label text based on the selected option value
+            labelElement.textContent = dropdown.options[dropdown.selectedIndex].text;
+        });
+    </script>
 </html>
