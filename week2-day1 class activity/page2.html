@@ -5,6 +5,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First Web Page</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function (event) {
+          // Use AJAX to fetch data from data.json
+          $.ajax({
+            url: "data.json",
+            dataType: "json",
+            success: function (data) {
+              // Update the content of the table with the data from JSON
+              updateTable(data);
+            },
+            error: function () {
+              alert("Error loading data");
+            },
+          });
+        });
+
+        // Function to update the table with data
+        function updateTable(data) {
+          var table = "<tr><th>" + data.heading + "</th>";
+          table += "<th>" + data.head1 + "</th>";
+          table += "<th>" + data.head2 + "</th>";
+          table += "<th>" + data.head3 + "</th>";
+          table += "<th>" + data.head4 + "</th></tr>";
+
+          table += "<tr><td>" + data.subheadcal + "</td>";
+          table += "<td>" + data.cal1 + "</td>";
+          table += "<td>" + data.cal2 + "</td>";
+          table += "<td>" + data.cal3 + "</td>";
+          table += "<td>" + data.cal4 + "</td></tr>";
+
+          table += "<tr><td>" + data.subheadfat + "</td>";
+          table += "<td>" + data.fat1 + "</td>";
+          table += "<td>" + data.fat2 + "</td>";
+          table += "<td>" + data.fat3 + "</td>";
+          table += "<td>" + data.fat4 + "</td></tr>";
+
+          table += "<tr><td>" + data.subheadven + "</td>";
+          table += "<td>" + data.ven1 + "</td>";
+          table += "<td>" + data.ven2 + "</td>";
+          table += "<td>" + data.ven3 + "</td>";
+          table += "<td>" + data.ven4 + "</td></tr>";
+
+          // Update the table content
+          $("table").html(table);
+        }
+      });
+    </script>
   </head>
 
   <body>
@@ -41,45 +92,13 @@
         <h1>My Second Heading</h1>
         <p>My Second Paragraph</p>
 
-        <table border="1">
-          <caption>
-            Calories Comparision of Popular Burgers
-          </caption>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Big Mac</th>
-              <th>Whopper</th>
-              <th>Dave's Double</th>
-              <th>Whataburger</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Calories</td>
-              <td>563</td>
-              <td>677</td>
-              <td>870</td>
-              <td>590</td>
-            </tr>
-
-            <tr>
-              <td>Fat</td>
-              <td>30gm</td>
-              <td>40gm</td>
-              <td>51gm</td>
-              <td>25gm</td>
-            </tr>
-
-            <tr>
-              <td>Vendor</td>
-              <td>MacD</td>
-              <td>Burger King</td>
-              <td>Wendys</td>
-              <td>Whataburger</td>
-            </tr>
-          </tbody>
-        </table>
+        <table border="1"></table>
+        <input
+          type="button"
+          id="btn"
+          value="Load Data"
+          style="margin-top: 20px"
+        />
       </main>
       <!-- End of Main Content -->
 

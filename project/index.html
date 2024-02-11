@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swimming Pool Paradise</title>
+  </head>
+  <body>
+    <header>
+      <h1>Swimming Pool Paradise</h1>
+      <p>Your Ultimate Destination for Relaxation and Fun</p>
+      <div>
+        <button class="login-btn" onclick="openLoginModal()">Login</button>
+        <button class="register-btn" onclick="openRegisterModal()">
+          Register
+        </button>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Pools</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <section>
+      <div
+        class="background-slider"
+        style="background-image: url('image1.jpg')"
+      ></div>
+      <div class="main-content">
+        <h2>Welcome to Swimming Pool Paradise</h2>
+        <p>
+          Discover the joy of swimming in our luxurious pools. Relax,
+          rejuvenate, and have fun in a serene environment.
+        </p>
+        <!-- Add more content as needed -->
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Swimming Pool Paradise. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button onclick="submitLoginForm()">Login</button>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Register</h2>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
+        <button onclick="submitRegisterForm()">Register</button>
+      </div>
+    </div>
+
+    <script>
+      function openLoginModal() {
+        document.getElementById("loginModal").style.display = "block";
+      }
+
+      function closeLoginModal() {
+        document.getElementById("loginModal").style.display = "none";
+      }
+
+      function openRegisterModal() {
+        document.getElementById("registerModal").style.display = "block";
+      }
+
+      function closeRegisterModal() {
+        document.getElementById("registerModal").style.display = "none";
+      }
+
+      function submitLoginForm() {
+        // Add logic to handle login form submission
+        alert("Login form submitted!");
+      }
+
+      function submitRegisterForm() {
+        // Add logic to handle register form submission
+        alert("Register form submitted!");
+      }
+    </script>
+  </body>
+</html>
