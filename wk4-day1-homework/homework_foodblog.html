@@ -82,12 +82,25 @@
         text-align: center;
         font-size: 0.85em;
       }
+      /*  */
+
+      .author-popup {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid gray;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div v-html="ob1.foodBlogContent"></div>
-      <div v-html="ob2.mainContent"></div>
+      <div v-html="ob2.mainContent">
+        <img src="images/profile.png" alt="" />
+      </div>
+
       <div v-html="ob2.footerContent"></div>
     </div>
 
@@ -113,6 +126,8 @@
            <main>
               <section id="blogposts">
           <div class="post">
+            <img src="images/profile.png" onclick="openPopup() alt="Profile Image" width="45" height="45" style="float: left; margin-right: 20px;" />
+            <br/>
             <span class="author">Brianna</span> —
             <span class="date">February 18, 2021 @ 3:30 pm</span>
             <span class="reply">REPLY</span>
@@ -125,6 +140,8 @@
           </div>
 
           <div class="post">
+              <img src="images/profile.png" alt="Profile Image" width="45" height="45" style="float: left; margin-right: 20px;" />
+            <br/>
             <span class="author">LINH</span> —
             <span class="date">February 15, 2021 @ 9:46 am</span>
             <span class="reply">REPLY</span>
@@ -164,10 +181,17 @@
         </section>
             </main>
           `,
-            footerContent: `<footer>&copy; Copyright FOOD BLOG</footer>`,
           },
         },
       });
+    </script>
+    <script>
+      export default {
+        props: {
+          author: Object,
+          showPopup: Boolean,
+        },
+      };
     </script>
   </body>
 </html>
